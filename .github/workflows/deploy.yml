@@ -57,6 +57,7 @@ jobs:
       - name: Build Awkwords
         working-directory: submodules/awkwords
         run: |
+          pnpx tsc
           cp -r src/public ../../public/awkwords/
 
       - name: Build main site
