@@ -52,12 +52,12 @@ jobs:
           hugo build \
             --gc \
             --minify \
-            --destination "../public/conlangs/"
+            --destination "../../public/conlangs/"
 
       - name: Build Awkwords
         working-directory: submodules/awkwords
         run: |
-          cp -r src/public ../public/awkwords/
+          cp -r src/public ../../public/awkwords/
 
       - name: Build main site
         run: |
