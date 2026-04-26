@@ -57,8 +57,7 @@ jobs:
       - name: Build Awkwords
         working-directory: submodules/awkwords
         run: |
-          pnpm install --frozen-lockfile
-          pnpx astro build --outDir "../public/awkwords"
+          cp -r src/public ../public/awkwords/
 
       - name: Build main site
         run: |
