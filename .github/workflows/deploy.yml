@@ -54,12 +54,13 @@ jobs:
           restore-keys: hugo-
 
       - name: Build Hugo site
+        working-directory: "conlangs"
         run: |
           hugo build \
             --gc \
             --minify \
             --cacheDir "${{ runner.temp }}/hugo_cache" \
-            --destination "public/conlangs/"
+            --destination "../public/conlangs/"
 
       - name: Cache save
         id: cache-save
