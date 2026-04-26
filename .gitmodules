@@ -1,0 +1,3 @@
+[submodule "conlangs"]
+	path = conlangs
+	url = https://github.com/meganekkogekirabu/conlangs
