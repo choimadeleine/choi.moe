@@ -1,0 +1,5 @@
+The main part of this project is licensed under GPLv3.0 or later, but
+contains two separately licensed submodules:
+
+- [awkwords](./submodules/awkwords): MIT
+- [conlangs](./submodules/conlangs): BSD 2-Clause
