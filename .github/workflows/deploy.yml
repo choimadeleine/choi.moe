@@ -46,37 +46,25 @@ jobs:
           rm "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
 
-      - name: Restore cache
-        uses: actions/cache/restore@v5
-        with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: hugo-${{ github.run_id }}
-          restore-keys: hugo-
-
       - name: Build Hugo site
-        working-directory: "submodules/conlangs"
+        working-directory: submodules/conlangs
         run: |
           hugo build \
             --gc \
             --minify \
-            --cacheDir "${{ runner.temp }}/hugo_cache" \
             --destination "../public/conlangs/"
 
-      - name: Cache save
-        id: cache-save
-        uses: actions/cache/save@v5
-        with:
-          path: ${{ runner.temp }}/hugo_cache
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+      - name: Build Awkwords
+        working-directory: submodules/awkwords
+        run: |
+          pnpm install --frozen-lockfile
+          pnpx astro build --outDir "../public/awkwords"
 
-      - name: Install Node dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build Astro site
-        run: pnpm build
-
-      - name: Rename 404 file
-        run: mv dist/404.html dist/not_found.html
+      - name: Build main site
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+          mv dist/404.html dist/not_found.html
 
       - name: deploy2nekoweb
         uses: indiefellas/deploy2nekoweb@main

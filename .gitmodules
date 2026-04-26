@@ -1,3 +1,6 @@
 [submodule "submodules/conlangs"]
 	path = submodules/conlangs
 	url = https://github.com/meganekkogekirabu/conlangs
+[submodule "submodules/awkwords"]
+	path = submodules/awkwords
+	url = https://github.com/meganekkogekirabu/awkwords-ts
