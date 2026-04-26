@@ -6,8 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "publish": "node scripts/publish.ts"
+    "astro": "astro"
   },
   "dependencies": {
     "@indiefellas/nekoweb-api": "^2.2.0",
