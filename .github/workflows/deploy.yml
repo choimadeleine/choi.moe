@@ -61,7 +61,7 @@ jobs:
       - name: Build Awkwords
         working-directory: submodules/awkwords
         run: |
-          tsc
+          tsc -p tsconfig.json
           cp -r public ../../public/awkwords/
 
       - name: Build main site
