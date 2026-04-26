@@ -54,7 +54,7 @@ jobs:
           restore-keys: hugo-
 
       - name: Build Hugo site
-        working-directory: "conlangs"
+        working-directory: "submodules/conlangs"
         run: |
           hugo build \
             --gc \
