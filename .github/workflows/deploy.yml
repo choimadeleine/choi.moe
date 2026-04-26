@@ -6,29 +6,71 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     environment: deploy
+    env:
+      GO_VERSION: 1.26.1
+      HUGO_VERSION: 0.160.0
+      NODE_VERSION: 24.14.1
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           version: 9
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
 
-      - name: Install dependencies
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache: false
+
+      - name: Install Hugo
+        run: |
+          curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          mkdir "${HOME}/.local/hugo"
+          tar -C "${HOME}/.local/hugo" -xf "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          rm "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+
+      - name: Restore cache
+        uses: actions/cache/restore@v5
+        with:
+          path: ${{ runner.temp }}/hugo_cache
+          key: hugo-${{ github.run_id }}
+          restore-keys: hugo-echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
+
+      - name: Build Hugo site
+        run: |
+          hugo build \
+            --gc \
+            --minify \
+            --cacheDir "${{ runner.temp }}/hugo_cache" \
+            --destination "public/conlangs/"
+
+      - name: Cache save
+        id: cache-save
+        uses: actions/cache/save@v5
+        with:
+          path: ${{ runner.temp }}/hugo_cache
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+
+      - name: Install Node dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build site
+      - name: Build Astro site
         run: pnpm build
 
       - name: Rename 404 file
