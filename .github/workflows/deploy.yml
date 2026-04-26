@@ -54,15 +54,18 @@ jobs:
             --minify \
             --destination "../../public/conlangs/"
 
+      - name: Install Node.js dependencies
+        run: |
+          pnpm install --frozen-lockfile
+
       - name: Build Awkwords
         working-directory: submodules/awkwords
         run: |
-          pnpx tsc
-          cp -r src/public ../../public/awkwords/
+          tsc
+          cp -r public ../../public/awkwords/
 
       - name: Build main site
         run: |
-          pnpm install --frozen-lockfile
           pnpm build
           mv dist/404.html dist/not_found.html
 

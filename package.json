@@ -1,5 +1,5 @@
 {
-  "name": "choi-nekoweb-org",
+  "name": "choi-moe",
   "type": "module",
   "version": "0.1.4",
   "scripts": {
@@ -12,7 +12,8 @@
   "dependencies": {
     "@indiefellas/nekoweb-api": "^2.2.0",
     "adm-zip": "^0.5.16",
-    "astro": "^5.16.6"
+    "astro": "^5.16.6",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@types/adm-zip": "^0.5.7"
