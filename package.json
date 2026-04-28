@@ -11,7 +11,7 @@
   "dependencies": {
     "@indiefellas/nekoweb-api": "^2.2.0",
     "adm-zip": "^0.5.17",
-    "astro": "^5.18.1",
+    "astro": "^6.1.6",
     "typescript": "^6.0.3"
   }
 }
