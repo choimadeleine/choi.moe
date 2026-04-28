@@ -2,11 +2,11 @@ name: Deploy
 
 on:
   push:
-    tags: ["v*"]
+    paths: ["/src", "/public", "/submodules"]
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     environment: deploy
     env:
