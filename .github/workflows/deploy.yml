@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    paths: ["/src", "/public", "/submodules"]
+    paths: ["src", "public", "submodules"]
   workflow_dispatch:
 
 jobs:
