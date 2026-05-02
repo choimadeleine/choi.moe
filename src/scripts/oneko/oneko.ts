@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later AND MIT
-// Copyright (C) 2026 Choi Madeleine
+// Copyright (C) 2026 Madeleine Choi
 // Copyright (C) 2022 adryd
 
 // Written by adryd325@github with modifications by meganekkogekirabu@github.

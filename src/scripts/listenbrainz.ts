@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// Copyright (C) 2026 Choi Madeleine
+// Copyright (C) 2026 Madeleine Choi
 
 interface Config {
   username: string;
