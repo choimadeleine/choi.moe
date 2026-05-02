@@ -1,20 +1,20 @@
 #header {
-    image-rendering: pixelated;
-    border: var(--border);
-    border-spacing: 0;
-    margin-bottom: 7px;
-    border-top: none;
-    width: 930px;
+  image-rendering: pixelated;
+  border: var(--border);
+  border-spacing: 0;
+  margin-bottom: 7px;
+  border-top: none;
+  width: 930px;
 }
 
 #header td {
-    padding: 5px;
+  padding: 5px;
 }
 
 #header-top {
-    background: var(--gradient-background);
+  background: var(--gradient-background);
 }
 
 #header-bottom {
-    background: url("/assets/frame_bottom.png");
+  background: url("/assets/frame_bottom.png");
 }

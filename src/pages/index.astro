@@ -7,14 +7,14 @@ import "../styles/boxes.css";
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="/assets/favicon.ico" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>美的主頁 :p</title>
-        <script>
-            /*
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>美的主頁 :p</title>
+    <script>
+      /*
         @licstart  The following is the entire license notice for the
         JavaScript code in this page.
 
@@ -38,91 +38,85 @@ import "../styles/boxes.css";
         @licend  The above is the entire license notice
         for the JavaScript code in this page.
         */
-        </script>
-    </head>
+    </script>
+  </head>
 
-    <body>
-        <SiteHeader />
-        <div id="boxes">
-            <Box title="停止 :(" id="stop-pls" wide> 請別再搞砸了 :( </Box>
-            <Box title="本網站" id="this-website" wide>
-                這主要只是一個首頁。我不計劃寫任何東西，可是我可能會 :p
-                <br /><br />
-                我知道這個手機網站有點半吊子 T_T
-            </Box>
-            <div id="lazy">
-                <img
-                    src="/assets/home_konata.png"
-                    title="graphic design is my passion!"
-                />
-            </div>
-            <Box title="關於" id="about" wide>
-                我叫美玲！我是vocaloid的粉絲，也喜歡編程，還會收藏動畫模型和CD。我也是個超級失敗者（很明顯吧）
-                ^_^
-                <br />
-                我也喜歡創造conlangs！你可以在
-                <a href="/conlangs">這裡</a>（英文） 看到它們。
-            </Box>
-            <Box title="音樂" id="listenbrainz-widget" wide>
-                <img id="album-art" />
-                <div id="listenbrainz-side">
-                    <small>正在聽</small>
-                    <h4 id="album-name" title="正在聽這張專輯">正在加載...</h4>
-                    <h4 id="album-artist" title="正在聽這位歌手的歌"></h4>
-                    <a
-                        href="https://github.com/choimadeleine/listenbrainz-widget"
-                        target="_blank"
-                    >
-                        <small>源代碼</small>
-                    </a>
-                </div>
-            </Box>
-            <Box title="外部連結" id="links" wide>
-                <ul>
-                    <li>
-                        <a href="https://listenbrainz.org/user/janpasi/"
-                            >listenbrainz.org</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://en.pronouns.page/@saphj"
-                            >pronouns.page</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://meta.wikimedia.org/wiki/Special:CentralAuth/Saph"
-                            >meta.wikimedia.org</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://sr.ht/~choimadeleine">sr.ht</a>
-                    </li>
-                    <li>
-                        <a href="https://discord.com/users/1405344638830645382"
-                            >discord.com</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://musicbrainz.org/user/janpasi"
-                            >musicbrainz.org</a
-                        >
-                    </li>
-                </ul>
-            </Box>
-            <Box title="語言" id="languages">
-                英文（母語）
-                <br /><br />
-                中文（TOCFL 2）
-            </Box>
+  <body>
+    <SiteHeader />
+    <div id="boxes">
+      <Box title="停止 :(" id="stop-pls" wide> 請別再搞砸了 :( </Box>
+      <Box title="本網站" id="this-website" wide>
+        這主要只是一個首頁。我不計劃寫任何東西，可是我可能會 :p
+        <br /><br />
+        我知道這個手機網站有點半吊子 T_T
+      </Box>
+      <div id="lazy">
+        <img
+          src="/assets/home_konata.png"
+          title="graphic design is my passion!"
+        />
+      </div>
+      <Box title="關於" id="about" wide>
+        我叫美玲！我是vocaloid的粉絲，也喜歡編程，還會收藏動畫模型和CD。我也是個超級失敗者（很明顯吧）
+        ^_^
+        <br />
+        我也喜歡創造conlangs！你可以在
+        <a href="/conlangs">這裡</a>（英文） 看到它們。
+      </Box>
+      <Box title="音樂" id="listenbrainz-widget" wide>
+        <img id="album-art" />
+        <div id="listenbrainz-side">
+          <small>正在聽</small>
+          <h4 id="album-name" title="正在聽這張專輯">正在加載...</h4>
+          <h4 id="album-artist" title="正在聽這位歌手的歌"></h4>
+          <a
+            href="https://github.com/choimadeleine/listenbrainz-widget"
+            target="_blank"
+          >
+            <small>源代碼</small>
+          </a>
         </div>
-        <p>
-            本網站的原始碼：<a href="//github.com/choimadeleine/choi.moe"
-                >meganekkogekirabu/choi.moe</a
+      </Box>
+      <Box title="外部連結" id="links" wide>
+        <ul>
+          <li>
+            <a href="https://listenbrainz.org/user/janpasi/">listenbrainz.org</a
             >
-        </p>
-        <script src="../scripts/drag.ts"></script>
-        <script src="../scripts/listenbrainz.ts"></script>
-        <script src="../scripts/oneko/oneko.ts"></script>
-    </body>
+          </li>
+          <li>
+            <a href="https://en.pronouns.page/@saphj">pronouns.page</a>
+          </li>
+          <li>
+            <a href="https://meta.wikimedia.org/wiki/Special:CentralAuth/Saph"
+              >meta.wikimedia.org</a
+            >
+          </li>
+          <li>
+            <a href="https://sr.ht/~choimadeleine">sr.ht</a>
+          </li>
+          <li>
+            <a href="https://discord.com/users/1405344638830645382"
+              >discord.com</a
+            >
+          </li>
+          <li>
+            <a href="https://musicbrainz.org/user/janpasi">musicbrainz.org</a>
+          </li>
+        </ul>
+      </Box>
+      <Box title="語言" id="languages">
+        英文（母語）
+        <br /><br />
+        中文（TOCFL 2）
+      </Box>
+    </div>
+    <p>
+      本網站的原始碼：<a href="//github.com/choimadeleine/choi.moe"
+        >meganekkogekirabu/choi.moe</a
+      >
+    </p>
+    <script src="../scripts/drag.ts"></script>
+    <script src="../scripts/listenbrainz.ts"></script>
+    <script src="../scripts/oneko/oneko.ts"></script>
+  </body>
 </html>
